@@ -24,18 +24,7 @@ class SecurityConfigurations:WebSecurityConfigurerAdapter {
     override fun configure(auth: AuthenticationManagerBuilder?) {
         auth
                 ?.jdbcAuthentication()
-                ?.dataSource(this.dataSource)
-              
-                ?.withUser(
-                        User.withUsername("user")
-                                .password("pass")
-                                .roles("USER")
-                )
-                ?.withUser(
-                        User.withUsername("admin")
-                                .password("pass")
-                                .roles("ADMIN")
-                );
+                ?.dataSource(this.dataSource);
     }
 
     /*
